@@ -21,8 +21,8 @@ export default function Home() {
     <div>
       <GlobalStyle />
       <Header Click={()=> setCheck(!check)} check={check}/>
-      <Proj />
-      <Footer />
+      <Proj check={check}/>
+      <Footer check={check}/>
     </div>
   )
 }

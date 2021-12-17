@@ -33,7 +33,7 @@ export const Box = styled.div`
 `
 
 export const BoxTopic = styled.div`
-  border: solid 1px;
+  border: solid 1px ${props => props.check ? "#cbd5e0" : "#000"};
   border-radius: 25px;
   text-align: center;
   width: 24%;

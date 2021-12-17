@@ -21,8 +21,8 @@ export default function About() {
     <div>
       <GlobalStyle />
       <Header Click={()=> setCheck(!check)} check={check}/>
-      <Sobre />
-      <Footer />
+      <Sobre check={check}/>
+      <Footer check={check}/>
     </div>
   )
 }

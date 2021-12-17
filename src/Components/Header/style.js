@@ -20,7 +20,7 @@ export const BoxBlog = styled.div`
 `
 export const BoxTopcs = styled.div`
 	display: flex;
-	p{
+	a{
 		color: ${props => props.check ? "#cbd5e0" : "#000"};
 		margin-right: 30px;
 		margin-bottom: 10px;
@@ -29,4 +29,8 @@ export const BoxTopcs = styled.div`
 			text-decoration: underline;
 		  }
 	}
+`
+export const Box = styled.div`
+  display: flex;
+  justify-content: space-between;
 `

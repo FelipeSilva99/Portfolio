@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './style';
+import Btn from '../button';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 
 export default function Header(props) {
@@ -10,7 +12,6 @@ export default function Header(props) {
           homes{
             title
             pages
-          }
           }
         }
     }`
@@ -23,13 +24,16 @@ export default function Header(props) {
 
 	return (
 		<>
-			<S.Container	onClick={props.Click} check={props.check}>
-				<S.BoxBlog>
-					<h2>{title}</h2>
-					<S.BoxTopcs>
-						<p>{pages[0]}</p>
-						<p>{pages[1]}</p>
-						<p>{pages[2]}</p>
+			<S.Container	check={props.check}>
+				<S.BoxBlog check={props.check}>
+          <S.Box>
+            <h2>{title}</h2>
+            <Btn click={props.Click} check={props.check}/>
+          </S.Box>
+					<S.BoxTopcs check={props.check}>
+						<Link to='/' check={props.check}>{pages[0]}</Link>
+						<Link to='/about' check={props.check}>{pages[1]}</Link>
+						<Link to='/projetos' check={props.check}>{pages[2]}</Link>
 					</S.BoxTopcs>
 				</S.BoxBlog>
 			</S.Container>

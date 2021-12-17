@@ -12,7 +12,7 @@ export const Container = styled.div`
 `
 
 export const BoxTitle = styled.div`
-  width: 76%;
+  width: 50%;
   height: auto;
   padding-top: 60px;
   h1{
@@ -22,11 +22,19 @@ export const BoxTitle = styled.div`
 `
 
 export const Box = styled.div`
-  width: 76%;
+  width: 70%;
   height: auto;
+  display: flex;
+`
+export const BoxImg = styled.div`
+  img{
+    width: 320px;
+    border-radius: 30px;
+  }
 `
 export const BoxTopic = styled.div`
   padding-top: 40px;
+  width: 80%;
   p{
     color: ${props => props.check ? "#cbd5e0" : "#000"};
     padding-top: 5px;

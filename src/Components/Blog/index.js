@@ -3,7 +3,7 @@ import * as S from './style';
 
 import axios from 'axios';
 
-export default function Blog() {
+export default function Blog(props) {
   const [dataRepos, setDataRepos] = useState([])
   useEffect(() => {
     getData();
@@ -14,14 +14,14 @@ export default function Blog() {
     console.log(response.data)
   }
   return (
-    <S.Container>
-      <S.BoxTitle>
+    <S.Container check={props.check}>
+      <S.BoxTitle check={props.check}>
         <h1>Blog</h1>
       </S.BoxTitle>
       <S.Box>
         {dataRepos.slice(0, 5).map(item => (
-          <S.BoxTopic>
-            <S.Title to={item.html_url}>{item.name}</S.Title>
+          <S.BoxTopic check={props.check}>
+            <S.Title to={item.html_url} check={props.check}>{item.name}</S.Title>
             <p>Data : {item.created_at}</p>
             <p>Linguagem : {item.language}</p>
           </S.BoxTopic>
