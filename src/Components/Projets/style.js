@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'gatsby';
+
 export const Container = styled.div`
   width: 100%;
   height: auto;
@@ -24,11 +26,25 @@ export const BoxTitle = styled.div`
 export const Box = styled.div`
   width: 76%;
   height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 `
+
 export const BoxTopic = styled.div`
-  padding-top: 40px;
+  border: solid 1px;
+  border-radius: 25px;
+  text-align: center;
+  width: 24%;
+  margin: 20px;
   p{
     color: ${props => props.check ? "#cbd5e0" : "#000"};
     padding-top: 5px;
   }
+`
+
+export const Title = styled(Link)`
+  color: ${props => props.check ? "#cbd5e0" : "#000"};
+  font-size: 24px;
 `

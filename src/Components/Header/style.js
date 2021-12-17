@@ -13,7 +13,7 @@ export const BoxBlog = styled.div`
 	width: 1300px;
 	border-bottom: solid #2d3748 ;
 	h2{
-		color: #cbd5e0;
+		color: ${props => props.check ? "#cbd5e0" : "#000"};
 		font-size: 35px;
 		margin-bottom: 30px;
 	}
@@ -21,8 +21,12 @@ export const BoxBlog = styled.div`
 export const BoxTopcs = styled.div`
 	display: flex;
 	p{
-		color: #cbd5e0;
+		color: ${props => props.check ? "#cbd5e0" : "#000"};
 		margin-right: 30px;
 		margin-bottom: 10px;
+		cursor: pointer;
+		&:hover{
+			text-decoration: underline;
+		  }
 	}
 `

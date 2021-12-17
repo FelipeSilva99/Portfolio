@@ -1,14 +1,31 @@
 import React from 'react';
 import * as S from './style';
+import { graphql, useStaticQuery } from 'gatsby';
 
 
 export default function Footer() {
-	return (
-		<S.Container>
-			<S.Box>
-				<p>©️ 2021 by Blog Pessoal. All rights reserved.</p>
-				<p>Portfolio by Felipe Silva</p>
-			</S.Box>
-		</S.Container>
-	)
+  
+  const data = useStaticQuery(graphql`
+    query {
+        alldata {
+          footers{
+            paragraph
+          }
+          }
+        }
+    }`
+    )
+
+  const {
+    paragraph
+  } = data.alldata.footers[0]
+
+  return (
+    <S.Container>
+      <S.Box>
+        <p>{paragraph[0]}</p>
+        <p>{paragraph[1]}</p>
+      </S.Box>
+    </S.Container>
+  )
 }
